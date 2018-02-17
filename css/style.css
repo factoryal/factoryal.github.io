@@ -2004,18 +2004,29 @@ i.icon:before {
   .container {
     padding: 0px;
   }
+  #header #header-title {
+    width: 80%;
+    padding: 0 10px;
+    position: absolute;
+    z-index: 1000;
+  }
   #header .logo-wrap {
-    width: 100%;
-    display: block;
+    zoom: 0.5;
+    display: inline-block;
     text-align: center;
+    padding: 10px 0 0 0;
   }
   #header .logo-wrap .logo {
     margin: 0 auto;
   }
   #header .subtitle-wrap {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    zoom: 0.9;
     margin-left: 0px;
+  }
+  #header .subtitle {
+    height: 40px;
+    line-height: 40px;
   }
   #header .nav-container {
     padding: 0px;
