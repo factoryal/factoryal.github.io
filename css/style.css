@@ -524,7 +524,7 @@ code {
   -webkit-appearance: textarea;
   padding: 0;
   width: 100px;
-  height: auto !important;
+  height: 25px !important;
   border: none !important;
   outline: none !important;
   background: none !important;
