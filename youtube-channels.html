@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <title>Factoryal Youtube Channels</title>
@@ -7,6 +8,12 @@
         #channels-wrap * {
             transition-duration: .3s;
         }
+        
+        a:link{ color: black;}
+        a:hover{ color: black;}
+        a:visited{ color: black;}
+        a:active{ color: black;}
+        
         
         .channel {
             box-sizing: border-box;
@@ -176,6 +183,7 @@
                 font-size: 15px;
             }
         }
+        
         @media screen and (max-width: 420px) {
             #channels-wrap {
                 width: 100%;
@@ -209,29 +217,35 @@
                 font-size: 15px;
             }
         }
+
     </style>
 </head>
 
 <body>
     <div id="channels-wrap">
-        <div class="channel">
-            <div class="channel_image">
-                <img src="https://yt3.ggpht.com/-8l4UxBtJ9i8/AAAAAAAAAAI/AAAAAAAAAAA/SBoMPKBcPjg/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg">
+        <a href="https://www.youtube.com/channel/UCTezT0_xKs-Z5MgJjPjSpfA">
+            <div class="channel">
+                <div class="channel_image">
+                    <img src="https://yt3.ggpht.com/-8l4UxBtJ9i8/AAAAAAAAAAI/AAAAAAAAAAA/SBoMPKBcPjg/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg">
+                </div>
+                <div class="channel_desc">
+                    <h3>g_Factoryal</h3>
+                    <p>팩토리얼 게임채널</p>
+                </div>
             </div>
-            <div class="channel_desc">
-                <h3>g_Factoryal</h3>
-                <p>팩토리얼 게임채널</p>
+        </a>
+        <a href="https://www.youtube.com/channel/UC21TD0nIgRvBcsvVY443-Pw">
+            <div class="channel">
+                <div class="channel_image">
+                    <img src="https://yt3.ggpht.com/-XS2D_7Ms2C4/AAAAAAAAAAI/AAAAAAAAAAA/CEEe6_XDs2Y/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg">
+                </div>
+                <div class="channel_desc">
+                    <h3>mk_Factoryal</h3>
+                    <p>팩토리얼 자작채널</p>
+                </div>
             </div>
-        </div>
-        <div class="channel">
-            <div class="channel_image">
-                <img src="https://yt3.ggpht.com/-XS2D_7Ms2C4/AAAAAAAAAAI/AAAAAAAAAAA/CEEe6_XDs2Y/s288-mo-c-c0xffffffff-rj-k-no/photo.jpg">
-            </div>
-            <div class="channel_desc">
-                <h3>mk_Factoryal</h3>
-                <p>팩토리얼 자작채널</p>
-            </div>
-        </div>
+        </a>
     </div>
 </body>
+
 </html>
