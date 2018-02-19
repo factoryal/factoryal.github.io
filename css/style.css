@@ -912,6 +912,35 @@ code {
 .tagcloud a {
   margin-right: 5px;
 }
+.item-avatar {
+  width: 100%;
+  height: 100px;
+}
+.item-avatar .avatar-image {
+  margin: 15px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  background-color: #26272b;
+  display: inline-block;
+  float: left;
+}
+.item-avatar .nickname-content {
+  height: 100px;
+  line-height: 100px;
+  display: inline-block;
+  font-size: 50px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.intro-content {
+  margin-top: 15px;
+}
 .article-single {
   padding: 30px 30px 20px;
 }
