@@ -2037,7 +2037,7 @@ i.icon:before {
     width: 80%;
     height: 50px;
     padding: 0 10px;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     overflow: hidden;
   }
@@ -2060,6 +2060,8 @@ i.icon:before {
     line-height: 40px;
   }
   #header .nav-container {
+    width: 100%;
+    position: fixed;
     padding: 0px;
   }
   #header .nav-container #main-nav-toggle {
@@ -2137,6 +2139,7 @@ i.icon:before {
     background: none;
   }
   #main {
+    margin-top: 51px;
     float: none;
   }
   #main .main-body-header,
