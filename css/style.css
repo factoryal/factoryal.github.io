@@ -2042,10 +2042,10 @@ i.icon:before {
     overflow: hidden;
   }
   #header .logo-wrap {
-    zoom: 0.5;
+    zoom: 0.45;
     display: inline-block;
     text-align: center;
-    padding: 10px 0 0 0;
+    padding: 15px 0 0 0;
   }
   #header .logo-wrap .logo {
     margin: 0 auto;
