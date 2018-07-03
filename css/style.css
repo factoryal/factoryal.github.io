@@ -2042,17 +2042,17 @@ i.icon:before {
     overflow: hidden;
   }
   #header .logo-wrap {
-    zoom: 0.45;
+    zoom: 0.4;
     display: inline-block;
     text-align: center;
-    padding: 15px 0 0 0;
+    padding: 20px 0 0 10px;
   }
   #header .logo-wrap .logo {
     margin: 0 auto;
   }
   #header .subtitle-wrap {
     display: inline-block;
-    zoom: 0.85;
+    zoom: 0.8;
     margin-left: 15px;
   }
   #header .subtitle {
