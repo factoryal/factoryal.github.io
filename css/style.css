@@ -2052,12 +2052,12 @@ i.icon:before {
   }
   #header .subtitle-wrap {
     display: inline-block;
-    zoom: 0.9;
-    margin-left: 0px;
+    zoom: 0.85;
+    margin-left: 15px;
   }
   #header .subtitle {
     height: 40px;
-    line-height: 40px;
+    line-height: 45px;
   }
   #header .nav-container {
     width: 100%;
