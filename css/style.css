@@ -2053,7 +2053,7 @@ i.icon:before {
   #header .subtitle-wrap {
     display: inline-block;
     zoom: 0.8;
-    z-index: 5000;
+    z-index: 1001;
   }
   #header .subtitle {
     height: 40px;
