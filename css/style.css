@@ -2039,7 +2039,7 @@ i.icon:before {
     padding: 0 10px;
     position: fixed;
     z-index: 1000;
-    overflow: hidden;
+    overflow: none;
   }
   #header .logo-wrap {
     zoom: 0.4;
