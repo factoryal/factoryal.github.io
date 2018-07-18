@@ -18,7 +18,7 @@
 <meta property="og:description" content="저번에 로터리 인터페이스의 프론트엔드(?) 부분을 완성하였고,이제 볼륨 조절과 LED 밝기를 실제로 컨트롤 하게 만들면 됩니다.볼륨 조절하는 IC는 아직 배송중이고, LED를 제어하는 회로는 이제 만들려고 합니다. LED는 음악에 따라 반응합니다.소리 크기와 주파수에 따라 켜지는 LED의 갯수와 색이 달라집니다.WS2812B라는 칩을 이용하여 LED를 제어">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://blog.factoryal.com/2018/07/18/mk030-4-D4TRG-VU-Meter-1편/IMG_2026.JPG">
-<meta property="og:updated_time" content="2018-07-18T08:00:10.289Z">
+<meta property="og:updated_time" content="2018-07-18T08:04:18.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[mk030](4) D4TRG VU Meter 1편">
 <meta name="twitter:description" content="저번에 로터리 인터페이스의 프론트엔드(?) 부분을 완성하였고,이제 볼륨 조절과 LED 밝기를 실제로 컨트롤 하게 만들면 됩니다.볼륨 조절하는 IC는 아직 배송중이고, LED를 제어하는 회로는 이제 만들려고 합니다. LED는 음악에 따라 반응합니다.소리 크기와 주파수에 따라 켜지는 LED의 갯수와 색이 달라집니다.WS2812B라는 칩을 이용하여 LED를 제어">
@@ -189,8 +189,8 @@ ga('send', 'pageview');
 <p>간단하게 작은 브레드보드로 구성하였습니다.<br>아두이노 나노에 74HC595(시프트레지스터)를 연결하고 출력을 8*LED 어레이에 물렸습니다.<br>오디오 신호 중 한 채널만 받아 아날로그 입력으로 넣어주었습니다.<br>파형이 잘 들어오는지 오실로스코프로도 확인해봅니다.</p>
 <p><br></p>
 <p><style><br>.video-container{position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;}<br>.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%;}<br></style></p>
-<div class="video-container"><br><iframe src="https://www.youtube.com/embed/2J6YBbtyUSI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br></div>
-
+<p><div class="video-container"></div></p>
+<p><iframe src="https://www.youtube.com/embed/2J6YBbtyUSI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br><br>참고로, 영상에 나오는 오실로스코프 화면의 보라색 파형은 노란색 파형을 FFT 연산한 결과입니다.</p>
 <p>깃허브에 작업중인 소스코드를 공개하며 계속 업데이트 됩니다.<br>source code : <a href="https://github.com/factoryal/D4TRG-VU-Meter" target="_blank" rel="noopener">https://github.com/factoryal/D4TRG-VU-Meter</a><br>(소스코드가 없으면 다른 branch를 확인해보세요)</p>
 <p><br><br><br><br><br><br>끝.</p>
 
