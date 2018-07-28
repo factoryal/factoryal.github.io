@@ -18,7 +18,7 @@
 <meta property="og:description" content="WS2812B가 도착했습니다.이거 완전 물건이네요.이전에 이어서 프로그래밍을 이어나가도록 합니다.깃허브에 소스코드를 공개하며 계속 업데이트 됩니다.source code : https://github.com/factoryal/D4TRG-VU-Meter(소스코드가 없으면 다른 branch를 확인해보세요) (태블릿 PC로 대충 그려서 이쁘진 않네요 ㅠ)오디오 신">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://blog.factoryal.com/2018/07/28/mk030-5-D4TRG-VU-Meter-2편/캡처.PNG">
-<meta property="og:updated_time" content="2018-07-28T15:42:33.602Z">
+<meta property="og:updated_time" content="2018-07-28T15:45:26.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[mk030](5) D4TRG VU Meter 2편">
 <meta name="twitter:description" content="WS2812B가 도착했습니다.이거 완전 물건이네요.이전에 이어서 프로그래밍을 이어나가도록 합니다.깃허브에 소스코드를 공개하며 계속 업데이트 됩니다.source code : https://github.com/factoryal/D4TRG-VU-Meter(소스코드가 없으면 다른 branch를 확인해보세요) (태블릿 PC로 대충 그려서 이쁘진 않네요 ㅠ)오디오 신">
@@ -191,7 +191,7 @@ ga('send', 'pageview');
 <li>파형의 최대값을 유지하는 peak detect 회로입니다. 1K옴 저항과 커패시터로 충전시간을 조절하고, 100K옴 저항으로 방전시간을 조절합니다.</li>
 <li>입력 임피던스는 크게, 출력 임피던스는 작게 하여 양쪽의 회로 변화에 따른 영항이 없도록 합니다.(Av=1 증폭기)</li>
 </ol>
-<p>병렬 커패시터에 의해서 Low Pass Filter 효과가 일어납니다. 저음에서 출력 신호 변화가 커지고 고음에서는 큰 영향을 주지 못합니다.</p>
+<p>병렬 커패시터에 의해서 Low Pass Filter 효과가 일어납니다. 저음에서 출력 신호 변화가 커지고 고음에서는 큰 영향을 주지 못합니다.<br>또한 신호 감소 진동이 심하고 선형이 아닙니다. 이는 소프트웨어로 보정해줍니다.</p>
 <p><br><br><img src="/2018/07/28/mk030-5-D4TRG-VU-Meter-2편/IMG_2209.JPG"><br>WS2812B입니다. 1m에 144개 들어있는 모듈로 2m를 구입했습니다.<br>가격은 25달러 정도 썼습니다.<br>세 단자가 있습니다. 각각 +5V, 신호, 0V를 입력해주면 됩니다.<br>이 모듈의 장점은 정전류 회로 구성할 걱정이 없으며, 대량의 LED를 제어하기 위한 멀티플렉서가 필요하지 않고, PWM도 자체적으로 되어 밝기 제어까지 가능하다는 겁니다.</p>
 <p><br><br><img src="/2018/07/28/mk030-5-D4TRG-VU-Meter-2편/plot.png"><br>소리의 크기와 전압은 지수함수의 관계를 갖기 때문에 작은 소리에서는 둔하게 반응하고 큰 소리에선 민감하게 반응합니다.<br>이를 로그함수를 이용해서 보정해줍니다.<br><a href="https://www.desmos.com/calculator" target="_blank" rel="noopener">https://www.desmos.com/calculator</a><br><a href="https://www.wolframalpha.com/input/?i=plot+(log(x)-1)*32+from+0+to+150" target="_blank" rel="noopener">https://www.wolframalpha.com/input/?i=plot+(log(x)-1)*32+from+0+to+150</a></p>
 <p><br></p>
