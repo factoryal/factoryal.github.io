@@ -3,26 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>[mk030](3) D4TRG 로터리 인터페이스 2편 | 팩토리얼 연구소</title>
+    <title>오실로스코프 DSO4104C 구매 | 팩토리얼 연구소</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="D4TRG" />
+        <meta name="keywords" content="" />
     
-    <meta name="description" content="저번에 이어 로터리 인터페이스를 계속 만듭니다.제어 회로를 따로 만들어주고 여러가지 모드를 선택해서 조절할 수도 있습니다.  브레드보드에 있던 회로를 만능기판으로 옮겼습니다.ATmega328이 남아서 그 IC 박아서 하려다가 납땜하기 귀찮아 그냥 아두이노 나노 그대로 사용했습니다.(회로 직접 만드는 것보다 중국에서 산 아두이노 쓰는 게 시간과 돈이 더 절약">
-<meta name="keywords" content="D4TRG">
+    <meta name="description" content="D4TRG 프로젝트를 진행하던 중오디오 신호를 분석하는 데 기존의 PC 오실로스코프로는 한계가 너무 많았습니다.좀 파형을 제대로 보고 싶어서…. 샀습니다. 사양은 학교 실험실에 있던 거에서 채널만 4개인 것을 찾아본 결과,100MHz, 1GSa/s, 4채널 오실로스코프에 파형발생기까지 내장되어 있는 Hantek사의 DSO4104C로 구입했습니다.https:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[mk030](3) D4TRG 로터리 인터페이스 2편">
-<meta property="og:url" content="https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/index.html">
+<meta property="og:title" content="오실로스코프 DSO4104C 구매">
+<meta property="og:url" content="https://blog.factoryal.com/2018/08/09/오실로스코프-DSO4104C-구매/index.html">
 <meta property="og:site_name" content="팩토리얼 연구소">
-<meta property="og:description" content="저번에 이어 로터리 인터페이스를 계속 만듭니다.제어 회로를 따로 만들어주고 여러가지 모드를 선택해서 조절할 수도 있습니다.  브레드보드에 있던 회로를 만능기판으로 옮겼습니다.ATmega328이 남아서 그 IC 박아서 하려다가 납땜하기 귀찮아 그냥 아두이노 나노 그대로 사용했습니다.(회로 직접 만드는 것보다 중국에서 산 아두이노 쓰는 게 시간과 돈이 더 절약">
+<meta property="og:description" content="D4TRG 프로젝트를 진행하던 중오디오 신호를 분석하는 데 기존의 PC 오실로스코프로는 한계가 너무 많았습니다.좀 파형을 제대로 보고 싶어서…. 샀습니다. 사양은 학교 실험실에 있던 거에서 채널만 4개인 것을 찾아본 결과,100MHz, 1GSa/s, 4채널 오실로스코프에 파형발생기까지 내장되어 있는 Hantek사의 DSO4104C로 구입했습니다.https:">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/IMG_1941.JPG">
-<meta property="og:updated_time" content="2018-07-16T15:20:18.119Z">
+<meta property="og:image" content="http://www.hantek.com/en/uploadpic/ProductImg/caf699b6-47fa-445d-ab37-2541aebd3a6b.png">
+<meta property="og:updated_time" content="2018-08-08T16:08:15.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[mk030](3) D4TRG 로터리 인터페이스 2편">
-<meta name="twitter:description" content="저번에 이어 로터리 인터페이스를 계속 만듭니다.제어 회로를 따로 만들어주고 여러가지 모드를 선택해서 조절할 수도 있습니다.  브레드보드에 있던 회로를 만능기판으로 옮겼습니다.ATmega328이 남아서 그 IC 박아서 하려다가 납땜하기 귀찮아 그냥 아두이노 나노 그대로 사용했습니다.(회로 직접 만드는 것보다 중국에서 산 아두이노 쓰는 게 시간과 돈이 더 절약">
-<meta name="twitter:image" content="https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/IMG_1941.JPG">
+<meta name="twitter:title" content="오실로스코프 DSO4104C 구매">
+<meta name="twitter:description" content="D4TRG 프로젝트를 진행하던 중오디오 신호를 분석하는 데 기존의 PC 오실로스코프로는 한계가 너무 많았습니다.좀 파형을 제대로 보고 싶어서…. 샀습니다. 사양은 학교 실험실에 있던 거에서 채널만 4개인 것을 찾아본 결과,100MHz, 1GSa/s, 4채널 오실로스코프에 파형발생기까지 내장되어 있는 Hantek사의 DSO4104C로 구입했습니다.https:">
+<meta name="twitter:image" content="http://www.hantek.com/en/uploadpic/ProductImg/caf699b6-47fa-445d-ab37-2541aebd3a6b.png">
     
 
     
@@ -150,14 +149,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-mk030-3-D4TRG-로터리-인터페이스-2편" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-오실로스코프-DSO4104C-구매" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        [mk030](3) D4TRG 로터리 인터페이스 2편
+        오실로스코프 DSO4104C 구매
         </h1>
     
 
@@ -167,66 +166,23 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/" class="article-date">
-            <time datetime="2018-07-16T13:53:31.000Z" itemprop="datePublished">2018-07-16</time>
+        <a href="/2018/08/09/오실로스코프-DSO4104C-구매/" class="article-date">
+            <time datetime="2018-08-08T15:34:51.000Z" itemprop="datePublished">2018-08-09</time>
         </a>
     </div>
 
                 
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/D4TRG/">D4TRG</a>
-    </div>
-
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>저번에 이어 로터리 인터페이스를 계속 만듭니다.<br>제어 회로를 따로 만들어주고 여러가지 모드를 선택해서 조절할 수도 있습니다.</p>
-<p><br><br><img src="/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/IMG_1941.JPG"></p>
-<p>브레드보드에 있던 회로를 만능기판으로 옮겼습니다.<br>ATmega328이 남아서 그 IC 박아서 하려다가 납땜하기 귀찮아 그냥 아두이노 나노 그대로 사용했습니다.<br>(회로 직접 만드는 것보다 중국에서 산 아두이노 쓰는 게 시간과 돈이 더 절약되는 건 안 비밀)</p>
-<p><br><br><img src="/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/IMG_1942.JPG"></p>
-<p>뒷면입니다.<br>기판 좌우로 파워라인을 구성할 수 있게 되어있어서 편했네요.<br>플럭스 세척제를 써보고 있는데 처절한 납땜 후에도 깨끗하게 마무리가 되어서 좋습니다.</p>
-<p><br><br><img src="/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/IMG_1943.JPG"></p>
-<p>이렇게 해서 로터리 인코더로 설정값을 바꿀 수 있습니다.</p>
-<p><br></p>
-<p><style><br>.video-container{position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;}<br>.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%;}<br></style></p>
-<div class="video-container"><br><iframe src="https://www.youtube.com/embed/qhzn5Pwm9nE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br></div>
-
-<p>로터리 인코더를 돌려서 설정값을 조절하고 클릭하여 설정 대상을 바꿀 수 있습니다.<br>현재 조정 방식은 다음과 같습니다.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>표시</th>
-<th>범위</th>
-<th>조정단위</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>스피커</td>
-<td>S</td>
-<td>0~99</td>
-<td>3</td>
-</tr>
-<tr>
-<td>헤드셋</td>
-<td>H</td>
-<td>0~99</td>
-<td>3</td>
-</tr>
-<tr>
-<td>LED밝기</td>
-<td>L</td>
-<td>0~8</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-<p><br><br><img src="/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/capture.PNG"></p>
-<p>내부적으로 클래스의 상속과 가상함수를 이용해서 새로운 설정도 추가하기 편하게 구현하려고 했습니다…<br>만, 피곤한 상태에서 작성한 코드가 많아 불필요한 코드가 분명 있을 겁니다. ㅎㅎ</p>
-<p>진행중인 프로그램의 소스코드는 여기에 있습니다.<br>소스코드가 안 보이면 다른 branch를 확인해보시기 바랍니다.<br>source: <a href="https://github.com/factoryal/D4TRG-Rotary-Interface" target="_blank" rel="noopener">https://github.com/factoryal/D4TRG-Rotary-Interface</a></p>
+            <p>D4TRG 프로젝트를 진행하던 중<br>오디오 신호를 분석하는 데 기존의 PC 오실로스코프로는 한계가 너무 많았습니다.<br>좀 파형을 제대로 보고 싶어서…. 샀습니다.</p>
+<p>사양은 학교 실험실에 있던 거에서 채널만 4개인 것을 찾아본 결과,<br>100MHz, 1GSa/s, 4채널 오실로스코프에 파형발생기까지 내장되어 있는 Hantek사의 DSO4104C로 구입했습니다.<br><a href="https://www.aliexpress.com/item/2017-Hantek-DSO4084C-DSO4104C-DSO4204C-DSO4254C-4-channel-Digital-Oscilloscope-With-1CH-Arbitary-function-Waveform-Generator/32839000171.html?ws_ab_test=searchweb0_0,searchweb201602_1_10152_10151_10065_10344_10068_10342_10343_10340_10341_10696_10084_10083_5011611_10618_10307_5011511_10712_5723611_10713_10059_100031_10103_10624_10623_10622_10621_10620,searchweb201603_2,ppcSwitch_2&amp;algo_expid=574ad27f-b386-42a0-a7be-c4da3fbefe2e-0&amp;algo_pvid=574ad27f-b386-42a0-a7be-c4da3fbefe2e&amp;priceBeautifyAB=0" target="_blank" rel="noopener">https://www.aliexpress.com/item/2017-Hantek-DSO4084C-DSO4104C-DSO4204C-DSO4254C-4-channel-Digital-Oscilloscope-With-1CH-Arbitary-function-Waveform-Generator/32839000171.html?ws_ab_test=searchweb0_0,searchweb201602_1_10152_10151_10065_10344_10068_10342_10343_10340_10341_10696_10084_10083_5011611_10618_10307_5011511_10712_5723611_10713_10059_100031_10103_10624_10623_10622_10621_10620,searchweb201603_2,ppcSwitch_2&amp;algo_expid=574ad27f-b386-42a0-a7be-c4da3fbefe2e-0&amp;algo_pvid=574ad27f-b386-42a0-a7be-c4da3fbefe2e&amp;priceBeautifyAB=0</a></p>
+<p><br><br><img src="/2018/08/09/오실로스코프-DSO4104C-구매/IMG_2373.JPG"><br>어마어마한 크기의 박스와 테이핑…<br>느린 배송으로 유명한 알리익스프레스이지만, 배송비에 투자를 했더니 10일도 안 되어서 도착했습니다.</p>
+<p><br><br><img src="/2018/08/09/오실로스코프-DSO4104C-구매/IMG_2374.JPG"><br>박스 안에 또 박스가 기다리고 있습니다.</p>
+<p><br><br><img src="/2018/08/09/오실로스코프-DSO4104C-구매/IMG_2375.JPG"><br>구성품입니다.<br>오실로스코프 본체, 프로브 4개, USB A-B 케이블, 파워 케이블, 동축 커넥터 케이블(?) 이렇게 있습니다.<br>CD에는 설명서와 PC용 소프트웨어가 있는데, 그냥 인터넷에서 받도록 합니다.<br>추가적으로 보증서도 있었습니다.</p>
+<p><br><br><img src="/2018/08/09/오실로스코프-DSO4104C-구매/IMG_2377.JPG"><br>설치하고 전원을 켠 뒤 프로브 보상 먼저 만져줍니다.<br>PC용 오실로스코프는 그냥 오징어가 됐네요.<br>너무 좋아요 ㅠ</p>
+<p><br><br><img src="/2018/08/09/오실로스코프-DSO4104C-구매/IMG_2379.JPG"><br>사진 찍을 겸 책상도 치워봅니다.<br>앞으로 더 수준 높은 자작이 가능할까요?</p>
 <p><br><br><br><br><br><br>끝.</p>
 
         </div>
@@ -235,7 +191,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/" data-id="cjklb2eeo000sec1p4mnk3pck" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://blog.factoryal.com/2018/08/09/오실로스코프-DSO4104C-구매/" data-id="cjklb2eev000wec1pydavnbnr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -356,20 +312,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/07/18/SilverStone-ML08B-H-케이스-업그레이드/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음글</strong>
-        <p class="article-nav-title">
-        
-            SilverStone ML08B-H 케이스 업그레이드
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/07/15/mk030-2-D4TRG-로터리-인터페이스-1편/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/08/03/mk030-6-D4TRG-디자인-2편/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전글</strong>
-        <p class="article-nav-title">[mk030](2) D4TRG 로터리 인터페이스 1편</p>
+        <p class="article-nav-title">[mk030](6) D4TRG 디자인 2편</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -589,7 +535,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'factoryal';
     
     
-    var disqus_url = 'https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-로터리-인터페이스-2편/';
+    var disqus_url = 'https://blog.factoryal.com/2018/08/09/오실로스코프-DSO4104C-구매/';
     
     (function() {
     var dsq = document.createElement('script');
