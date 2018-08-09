@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>D4TRG 준비 | 팩토리얼 연구소</title>
+    <title>[mk030](7) D4TRG VU Meter 3편 | 팩토리얼 연구소</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="D4TRG" />
     
-    <meta name="description" content="올해 초부터 생각했던 자작품을 만들려고 합니다.이름은 뭐로 지을까 고민고민했는데 갑자기 떠올랐습니다. “D4TRG“(Device for Touch Rhythm Gamers) 즉, 터치리듬게이머를 위한 장치입니다. 저는 모바일 리듬게임을 좋아합니다.5년 전에 Cytus로 입문해서 여러가지 해보고 있죠.아이패드3으로 한참 플레이하다가 군대 갈 때 팔아버리고 전">
+    <meta name="description" content="요즘 시간이 없네요.딱 집중해서 하고 싶은데 자꾸 나가야 할 일정이 생깁니다. ㅠ 저번에 볼륨 부분을 만졌으니 이제 주파수에 따라 반응하는 걸 만들어야 하는데요.기존의 회로로 구현하기에 많이 복잡해져서 좀 뜯어고쳤습니다.  각 회로의 부분에 대한 역할은 다음과 같습니다.  직류 성분을 차단하고 중심값을 0V로 맞춥니다. (오실로스코프 1번 채널) 입력 임피">
 <meta name="keywords" content="D4TRG">
 <meta property="og:type" content="article">
-<meta property="og:title" content="D4TRG 준비">
-<meta property="og:url" content="https://blog.factoryal.com/2018/07/09/D4TRG-준비/index.html">
+<meta property="og:title" content="[mk030](7) D4TRG VU Meter 3편">
+<meta property="og:url" content="https://blog.factoryal.com/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/index.html">
 <meta property="og:site_name" content="팩토리얼 연구소">
-<meta property="og:description" content="올해 초부터 생각했던 자작품을 만들려고 합니다.이름은 뭐로 지을까 고민고민했는데 갑자기 떠올랐습니다. “D4TRG“(Device for Touch Rhythm Gamers) 즉, 터치리듬게이머를 위한 장치입니다. 저는 모바일 리듬게임을 좋아합니다.5년 전에 Cytus로 입문해서 여러가지 해보고 있죠.아이패드3으로 한참 플레이하다가 군대 갈 때 팔아버리고 전">
+<meta property="og:description" content="요즘 시간이 없네요.딱 집중해서 하고 싶은데 자꾸 나가야 할 일정이 생깁니다. ㅠ 저번에 볼륨 부분을 만졌으니 이제 주파수에 따라 반응하는 걸 만들어야 하는데요.기존의 회로로 구현하기에 많이 복잡해져서 좀 뜯어고쳤습니다.  각 회로의 부분에 대한 역할은 다음과 같습니다.  직류 성분을 차단하고 중심값을 0V로 맞춥니다. (오실로스코프 1번 채널) 입력 임피">
 <meta property="og:locale" content="ko">
-<meta property="og:image" content="https://blog.factoryal.com/2018/07/09/D4TRG-준비/capture.PNG">
-<meta property="og:updated_time" content="2018-07-15T04:15:32.531Z">
+<meta property="og:image" content="https://blog.factoryal.com/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/schematic.PNG">
+<meta property="og:updated_time" content="2018-08-09T06:11:05.509Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="D4TRG 준비">
-<meta name="twitter:description" content="올해 초부터 생각했던 자작품을 만들려고 합니다.이름은 뭐로 지을까 고민고민했는데 갑자기 떠올랐습니다. “D4TRG“(Device for Touch Rhythm Gamers) 즉, 터치리듬게이머를 위한 장치입니다. 저는 모바일 리듬게임을 좋아합니다.5년 전에 Cytus로 입문해서 여러가지 해보고 있죠.아이패드3으로 한참 플레이하다가 군대 갈 때 팔아버리고 전">
-<meta name="twitter:image" content="https://blog.factoryal.com/2018/07/09/D4TRG-준비/capture.PNG">
+<meta name="twitter:title" content="[mk030](7) D4TRG VU Meter 3편">
+<meta name="twitter:description" content="요즘 시간이 없네요.딱 집중해서 하고 싶은데 자꾸 나가야 할 일정이 생깁니다. ㅠ 저번에 볼륨 부분을 만졌으니 이제 주파수에 따라 반응하는 걸 만들어야 하는데요.기존의 회로로 구현하기에 많이 복잡해져서 좀 뜯어고쳤습니다.  각 회로의 부분에 대한 역할은 다음과 같습니다.  직류 성분을 차단하고 중심값을 0V로 맞춥니다. (오실로스코프 1번 채널) 입력 임피">
+<meta name="twitter:image" content="https://blog.factoryal.com/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/schematic.PNG">
     
 
     
@@ -150,14 +150,14 @@ ga('send', 'pageview');
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-D4TRG-준비" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-mk030-7-D4TRG-VU-Meter-3편" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        D4TRG 준비
+        [mk030](7) D4TRG VU Meter 3편
         </h1>
     
 
@@ -167,8 +167,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/07/09/D4TRG-준비/" class="article-date">
-            <time datetime="2018-07-09T13:02:51.000Z" itemprop="datePublished">2018-07-09</time>
+        <a href="/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/" class="article-date">
+            <time datetime="2018-08-09T05:41:01.000Z" itemprop="datePublished">2018-08-09</time>
         </a>
     </div>
 
@@ -182,13 +182,23 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>올해 초부터 생각했던 자작품을 만들려고 합니다.<br>이름은 뭐로 지을까 고민고민했는데 갑자기 떠올랐습니다.</p>
-<p>“<strong>D4TRG</strong>“<br>(<strong>D</strong>evice <em>for</em> <strong>T</strong>ouch <strong>R</strong>hythm <strong>G</strong>amers)</p>
-<p>즉, 터치리듬게이머를 위한 장치입니다.</p>
-<p>저는 모바일 리듬게임을 좋아합니다.<br>5년 전에 Cytus로 입문해서 여러가지 해보고 있죠.<br>아이패드3으로 한참 플레이하다가 군대 갈 때 팔아버리고 전역 후에는 아이폰SE로 즐기고 있는데…<br>아놔… 엄지 플레이가 너무 어렵습니다…<br>게다가 화면이 작아지니 노트도 같이 작아져서 타격 판정이 어려워진다는 문제가 있었습니다.</p>
-<p>그래서 마음속으로 ‘컴퓨터 모니터만한 태블릿PC에 게임을 하면 좋겠다…’ 생각을 하고 여러가지 구상을 해본 결과, 충분히 만들어 볼 수 있지 않을까 생각이 들었습니다.</p>
-<p>제가 만들던 것 중에서 가장 큰 사이즈가 아닐까 싶습니다.<br>외형 제작이 필요한데, 3D 프린터로도 커버가 안 되고 CNC로 작업을 돌리게 생겼네요.<br>기존에 사용하던 모델링 프로그램을 포기하고 더 나은 호환성과 환경을 사용하기 위해 Autodesk Fusion 360으로 갈아탔습니다.<br><img src="/2018/07/09/D4TRG-준비/capture.PNG"><br>외형 디자인을 위해 내부 배치 확인용으로 부품들을 그려보고 있습니다.<br>첫 사용이기도 하고 연습단계라 하나하나 그리는데 어마어마한 시간이 소요되지만, 복잡한 부분도 쉽게 그릴 수 있어서 좋네요.</p>
-<p>이렇게 해서 완성을 한다면 다른 사람과 공유해보기 위해 전시회에 출품해볼까 생각중인데, 4년 전에 갔던 Maker Faire Seoul이 생각나서 찾아봤더니…<br>신청기한이 2주도 안 남았습니다. ㄷㄷ<br>허허.. 이거 완성 가능성도 모르겠는데 먼저 신청을 해야하나 싶네요..<br><br><br><br><br><br><br><br><br><br><br>끝.</p>
+            <p>요즘 시간이 없네요.<br>딱 집중해서 하고 싶은데 자꾸 나가야 할 일정이 생깁니다. ㅠ</p>
+<p>저번에 볼륨 부분을 만졌으니 이제 주파수에 따라 반응하는 걸 만들어야 하는데요.<br>기존의 회로로 구현하기에 많이 복잡해져서 좀 뜯어고쳤습니다.</p>
+<img src="/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/schematic.PNG">
+<p>각 회로의 부분에 대한 역할은 다음과 같습니다.</p>
+<ol>
+<li>직류 성분을 차단하고 중심값을 0V로 맞춥니다. (오실로스코프 1번 채널)</li>
+<li>입력 임피던스는 크게, 출력 임피던스를 작게 하여 회로 양단간 변화에 따른 영향을 줄입니다. OP AMP의 전원 전압이 0~5V이기 때문에 0V보다 낮은 전압은 0V로 출력됩니다(오실로스코프 2번 채널). 입력 전압이 다이오드의 순방향 전압강하인 약 0.6V 이상 역전압으로 들어오면 오작동하니 입력 전압 수준을 최대 0.3V 수준으로만 입력하도록 합니다.</li>
+<li>아두이노에서 읽을 수 있도록 전압을 10배정도 증폭시켜줍니다. (오실로스코프 3번 채널)</li>
+</ol>
+<p><br><br><img src="/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/dso_08_08_20_20_46.png"><br>(스크린샷 하면 왜 메뉴까지 같이 찍히는가…)<br>이게 위에서 설명했던 2번 부분의 오작동입니다.<br>입력 전압이 -0.6V 아래로 떨어지면 0V를 유지하던 출력이 순식간에 최대치로 치솟아 오릅니다.<br>이거 찾는데 오실로스코프가 없었으면 해결하지 못했을 겁니다. ㅎㅎ<br>따라서, 오디오 입력을 안전하게 0.3V가 넘어가지 않도록 조절하여 입력해야겠죠.</p>
+<p><br><br><img src="/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/dso_08_09_02_36_27.png"><br>위 회로도에 나와있던 오실로스코프 단자의 파형입니다.<br>1번 채널의 하위 부분이 제거된 것이 2번 채널에 확인됩니다.<br>MATH 채널(보라색)은 1번 채널에서 2번 채널을 뺀 결과입니다. 윗 부분의 파형은 같기 때문에 0V가 정상적으로 나오는 것을 확인하였습니다.<br>3번 채널은 이를 10배정도 증폭하였습니다. 저거 찍을 당시에는 20배였는데 클리핑이 좀 일어나서 10배로 줄였습니다.(아래 영상 참조)</p>
+<p>주파수를 분석하려면 여러개의 ADC 값을 이용해야합니다.<br>각 채널별로 128개의 값을 샘플링하여 이산 푸리에 변환(DFT) 연산을 하면 파형이 주파수 데이터로 변환됩니다.<br>이게 아두이노</p>
+<p><br><br></p>
+<p><style><br>.video-container{position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;}<br>.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%;}<br></style></p>
+<p><div class="video-container"></div></p>
+<p><iframe src="https://www.youtube.com/embed/isZ12PsXQRM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br><br>동작 영상입니다.<br>주파수 확인하는 LED가 제대로 작동하는지 잘 모르겠네요?<br>하지만 음악에 따라 반응하는 것 같으니 여기까지 일단 해놓으렵니다.</p>
+<p><br><br><br><br><br><br>끝.</p>
 
         </div>
         <footer class="article-footer">
@@ -196,7 +206,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://blog.factoryal.com/2018/07/09/D4TRG-준비/" data-id="cjkm5zkez000mjk1p38tygr9h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://blog.factoryal.com/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/" data-id="cjkm5zkfy0018jk1pgwo9cze1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -317,20 +327,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/07/11/mk030-1-D4TRG-디자인-1편/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">다음글</strong>
-        <p class="article-nav-title">
-        
-            [mk030](1) D4TRG 디자인 1편
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/07/04/Prusa-i3-rework-업데이트/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/08/09/오실로스코프-DSO4104C-구매/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">이전글</strong>
-        <p class="article-nav-title">Prusa i3 rework 업데이트</p>
+        <p class="article-nav-title">오실로스코프 DSO4104C 구매</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -550,7 +550,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'factoryal';
     
     
-    var disqus_url = 'https://blog.factoryal.com/2018/07/09/D4TRG-준비/';
+    var disqus_url = 'https://blog.factoryal.com/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/';
     
     (function() {
     var dsq = document.createElement('script');
