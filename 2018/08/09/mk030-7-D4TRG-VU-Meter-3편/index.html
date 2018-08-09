@@ -18,7 +18,7 @@
 <meta property="og:description" content="요즘 시간이 없네요.딱 집중해서 하고 싶은데 자꾸 나가야 할 일정이 생깁니다. ㅠ 저번에 볼륨 부분을 만졌으니 이제 주파수에 따라 반응하는 걸 만들어야 하는데요.기존의 회로로 구현하기에 많이 복잡해져서 좀 뜯어고쳤습니다.  각 회로의 부분에 대한 역할은 다음과 같습니다.  직류 성분을 차단하고 중심값을 0V로 맞춥니다. (오실로스코프 1번 채널) 입력 임피">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://blog.factoryal.com/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/schematic.PNG">
-<meta property="og:updated_time" content="2018-08-09T06:11:05.509Z">
+<meta property="og:updated_time" content="2018-08-09T06:16:49.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[mk030](7) D4TRG VU Meter 3편">
 <meta name="twitter:description" content="요즘 시간이 없네요.딱 집중해서 하고 싶은데 자꾸 나가야 할 일정이 생깁니다. ㅠ 저번에 볼륨 부분을 만졌으니 이제 주파수에 따라 반응하는 걸 만들어야 하는데요.기존의 회로로 구현하기에 많이 복잡해져서 좀 뜯어고쳤습니다.  각 회로의 부분에 대한 역할은 다음과 같습니다.  직류 성분을 차단하고 중심값을 0V로 맞춥니다. (오실로스코프 1번 채널) 입력 임피">
@@ -193,11 +193,12 @@ ga('send', 'pageview');
 </ol>
 <p><br><br><img src="/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/dso_08_08_20_20_46.png"><br>(스크린샷 하면 왜 메뉴까지 같이 찍히는가…)<br>이게 위에서 설명했던 2번 부분의 오작동입니다.<br>입력 전압이 -0.6V 아래로 떨어지면 0V를 유지하던 출력이 순식간에 최대치로 치솟아 오릅니다.<br>이거 찾는데 오실로스코프가 없었으면 해결하지 못했을 겁니다. ㅎㅎ<br>따라서, 오디오 입력을 안전하게 0.3V가 넘어가지 않도록 조절하여 입력해야겠죠.</p>
 <p><br><br><img src="/2018/08/09/mk030-7-D4TRG-VU-Meter-3편/dso_08_09_02_36_27.png"><br>위 회로도에 나와있던 오실로스코프 단자의 파형입니다.<br>1번 채널의 하위 부분이 제거된 것이 2번 채널에 확인됩니다.<br>MATH 채널(보라색)은 1번 채널에서 2번 채널을 뺀 결과입니다. 윗 부분의 파형은 같기 때문에 0V가 정상적으로 나오는 것을 확인하였습니다.<br>3번 채널은 이를 10배정도 증폭하였습니다. 저거 찍을 당시에는 20배였는데 클리핑이 좀 일어나서 10배로 줄였습니다.(아래 영상 참조)</p>
-<p>주파수를 분석하려면 여러개의 ADC 값을 이용해야합니다.<br>각 채널별로 128개의 값을 샘플링하여 이산 푸리에 변환(DFT) 연산을 하면 파형이 주파수 데이터로 변환됩니다.<br>이게 아두이노</p>
+<p>주파수를 분석하려면 여러개의 ADC 값을 이용해야합니다.<br>각 채널별로 128개의 값을 샘플링하여 이산 푸리에 변환(DFT) 연산을 하면 파형이 주파수 데이터로 변환됩니다.<br>푸리에 변환은 아두이노에게 어마어마한 메모리와 연산 시간을 사용하게 되니 메모리 관리와 처리 시간을 최적화 하도록 프로그래밍하는 게 중요합니다.</p>
 <p><br><br></p>
 <p><style><br>.video-container{position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;}<br>.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%;}<br></style></p>
-<p><div class="video-container"></div></p>
-<p><iframe src="https://www.youtube.com/embed/isZ12PsXQRM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br><br>동작 영상입니다.<br>주파수 확인하는 LED가 제대로 작동하는지 잘 모르겠네요?<br>하지만 음악에 따라 반응하는 것 같으니 여기까지 일단 해놓으렵니다.</p>
+<div class="video-container"><br><iframe src="https://www.youtube.com/embed/isZ12PsXQRM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br></div>
+
+<p>동작 영상입니다.<br>주파수 확인하는 LED가 제대로 작동하는지 잘 모르겠네요?<br>하지만 음악에 따라 반응하는 것 같으니 여기까지 일단 해놓으렵니다.</p>
 <p><br><br><br><br><br><br>끝.</p>
 
         </div>
