@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>[mk030](3) D4TRG 로터리 인터페이스 2편 | 팩토리얼 연구소</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="D4TRG" />
+    
+    <meta name="description" content="저번에 이어 로터리 인터페이스를 계속 만듭니다.제어 회로를 따로 만들어주고 여러가지 모드를 선택해서 조절할 수도 있습니다.  브레드보드에 있던 회로를 만능기판으로 옮겼습니다.ATmega328이 남아서 그 IC 박아서 하려다가 납땜하기 귀찮아 그냥 아두이노 나노 그대로 사용했습니다.(회로 직접 만드는 것보다 중국에서 산 아두이노 쓰는 게 시간과 돈이 더 절약">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[mk030](3) D4TRG 로터리 인터페이스 2편">
+<meta property="og:url" content="https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/index.html">
+<meta property="og:site_name" content="팩토리얼 연구소">
+<meta property="og:description" content="저번에 이어 로터리 인터페이스를 계속 만듭니다.제어 회로를 따로 만들어주고 여러가지 모드를 선택해서 조절할 수도 있습니다.  브레드보드에 있던 회로를 만능기판으로 옮겼습니다.ATmega328이 남아서 그 IC 박아서 하려다가 납땜하기 귀찮아 그냥 아두이노 나노 그대로 사용했습니다.(회로 직접 만드는 것보다 중국에서 산 아두이노 쓰는 게 시간과 돈이 더 절약">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/IMG_1941.JPG">
+<meta property="article:published_time" content="2018-07-16T13:53:31.000Z">
+<meta property="article:modified_time" content="2018-07-16T15:20:18.119Z">
+<meta property="article:author" content="_0x4d">
+<meta property="article:tag" content="D4TRG">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/IMG_1941.JPG">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/icon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/noto/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/d2coding/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-114321642-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">_0x4d&#39;s Factoryal Laboratory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="검색어를 입력하세요." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/DIY/">DIY</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-mk030-3-D4TRG-로터리-인터페이스-2편" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        [mk030](3) D4TRG 로터리 인터페이스 2편
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/" class="article-date">
+            <time datetime="2018-07-16T13:53:31.000Z" itemprop="datePublished">2018-07-16</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/D4TRG/" rel="tag">D4TRG</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>저번에 이어 로터리 인터페이스를 계속 만듭니다.<br>제어 회로를 따로 만들어주고 여러가지 모드를 선택해서 조절할 수도 있습니다.</p>
+<p><br><br><img src="/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/IMG_1941.JPG" class=""></p>
+<p>브레드보드에 있던 회로를 만능기판으로 옮겼습니다.<br>ATmega328이 남아서 그 IC 박아서 하려다가 납땜하기 귀찮아 그냥 아두이노 나노 그대로 사용했습니다.<br>(회로 직접 만드는 것보다 중국에서 산 아두이노 쓰는 게 시간과 돈이 더 절약되는 건 안 비밀)</p>
+<p><br><br><img src="/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/IMG_1942.JPG" class=""></p>
+<p>뒷면입니다.<br>기판 좌우로 파워라인을 구성할 수 있게 되어있어서 편했네요.<br>플럭스 세척제를 써보고 있는데 처절한 납땜 후에도 깨끗하게 마무리가 되어서 좋습니다.</p>
+<p><br><br><img src="/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/IMG_1943.JPG" class=""></p>
+<p>이렇게 해서 로터리 인코더로 설정값을 바꿀 수 있습니다.</p>
+<p><br></p>
+<p><style><br>.video-container{position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;}<br>.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%;}<br></style></p>
+<div class="video-container"><br><iframe src="https://www.youtube.com/embed/qhzn5Pwm9nE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br></div>
+
+<p>로터리 인코더를 돌려서 설정값을 조절하고 클릭하여 설정 대상을 바꿀 수 있습니다.<br>현재 조정 방식은 다음과 같습니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>표시</th>
+<th>범위</th>
+<th>조정단위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>스피커</td>
+<td>S</td>
+<td>0~99</td>
+<td>3</td>
+</tr>
+<tr>
+<td>헤드셋</td>
+<td>H</td>
+<td>0~99</td>
+<td>3</td>
+</tr>
+<tr>
+<td>LED밝기</td>
+<td>L</td>
+<td>0~8</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><br><br><img src="/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/capture.PNG" class=""></p>
+<p>내부적으로 클래스의 상속과 가상함수를 이용해서 새로운 설정도 추가하기 편하게 구현하려고 했습니다…<br>만, 피곤한 상태에서 작성한 코드가 많아 불필요한 코드가 분명 있을 겁니다. ㅎㅎ</p>
+<p>진행중인 프로그램의 소스코드는 여기에 있습니다.<br>소스코드가 안 보이면 다른 branch를 확인해보시기 바랍니다.<br>source: <a href="https://github.com/factoryal/D4TRG-Rotary-Interface" target="_blank" rel="noopener">https://github.com/factoryal/D4TRG-Rotary-Interface</a></p>
+<p><br><br><br><br><br><br>끝.</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/" data-id="ckec43jdx000c3w1pbcwu39aj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/factoryal" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="youtube-play" href="https://www.youtube.com/channel/UCTezT0_xKs-Z5MgJjPjSpfA" target="_blank">
+                        <i class="icon fa fa-youtube-play"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="book" href="https://vkdlsvnt.blog.me" target="_blank">
+                        <i class="icon fa fa-book"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="gift" href="https://www.patreon.com/_0x4d" target="_blank">
+                        <i class="icon fa fa-gift"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/07/18/SilverStone-ML08B-H-%EC%BC%80%EC%9D%B4%EC%8A%A4-%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">다음글</strong>
+        <p class="article-nav-title">
+        
+            SilverStone ML08B-H 케이스 업그레이드
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/07/15/mk030-2-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-1%ED%8E%B8/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">이전글</strong>
+        <p class="article-nav-title">[mk030](2) D4TRG 로터리 인터페이스 1편</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                <div class="widget-wrap widget-list">
+    <h3 class="widget-title">Profile</h3>
+    <div class="widget">
+        <div class="item-avatar">
+            <img class="avatar-image" src="/css/images/avatar_4.jpg"></img>
+            <h3 class="nickname-content">_0x4d</h3>
+        </div>
+        <div class="item-intro">
+            <p class="intro-content">
+                안녕하세요? Factoryalab의 0x4d(옥스포드)입니다.<br>
+                전기전자회로, 컴퓨터조립, 프로그래밍, IT분야, 3D프린팅 등등 많은 분야에 관심이 있습니다.<br>
+                조선대학교 전자공학과 휴학중입니다.
+            </p>
+        </div>
+    </div>
+</div>
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/07/06/mk031-3-%ED%9A%8C%EB%A1%9C-%EA%B5%AC%EC%84%B1-%EB%B0%8F-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2020/07/06/mk031-3-%ED%9A%8C%EB%A1%9C-%EA%B5%AC%EC%84%B1-%EB%B0%8F-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/IMG_9295.JPG)" alt="[mk031](3) 회로 구성 및 프로그래밍" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/DIY/">DIY</a></p>
+                            <p class="item-title"><a href="/2020/07/06/mk031-3-%ED%9A%8C%EB%A1%9C-%EA%B5%AC%EC%84%B1-%EB%B0%8F-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="title">[mk031](3) 회로 구성 및 프로그래밍</a></p>
+                            <p class="item-date"><time datetime="2020-07-06T14:25:51.000Z" itemprop="datePublished">2020-07-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/07/06/mk031-2-MuseDashCon-%EC%99%B8%ED%98%95-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B0%8F-%EC%A1%B0%EB%A6%BD/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2020/07/06/mk031-2-MuseDashCon-%EC%99%B8%ED%98%95-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B0%8F-%EC%A1%B0%EB%A6%BD/2020-07-06%20190201.jpg)" alt="[mk031](2) MuseDashCon 외형 디자인 및 조립" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/DIY/">DIY</a></p>
+                            <p class="item-title"><a href="/2020/07/06/mk031-2-MuseDashCon-%EC%99%B8%ED%98%95-%EB%94%94%EC%9E%90%EC%9D%B8-%EB%B0%8F-%EC%A1%B0%EB%A6%BD/" class="title">[mk031](2) MuseDashCon 외형 디자인 및 조립</a></p>
+                            <p class="item-date"><time datetime="2020-07-06T10:46:40.000Z" itemprop="datePublished">2020-07-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/07/06/mk031-1-MuseDashCon-%EC%A4%80%EB%B9%84/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2020/07/06/mk031-1-MuseDashCon-%EC%A4%80%EB%B9%84/IMG_9377_mod.jpg)" alt="[mk031](1) MuseDashCon 준비" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/DIY/">DIY</a></p>
+                            <p class="item-title"><a href="/2020/07/06/mk031-1-MuseDashCon-%EC%A4%80%EB%B9%84/" class="title">[mk031](1) MuseDashCon 준비</a></p>
+                            <p class="item-date"><time datetime="2020-07-06T08:35:35.000Z" itemprop="datePublished">2020-07-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/04/16/%EC%86%90%EB%AA%A9-%EB%B9%A0%EC%9A%94%EC%97%94/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2020/04/16/%EC%86%90%EB%AA%A9-%EB%B9%A0%EC%9A%94%EC%97%94/thumbnail5.jpg)" alt="손목 빠요엔" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/DIY/">DIY</a></p>
+                            <p class="item-title"><a href="/2020/04/16/%EC%86%90%EB%AA%A9-%EB%B9%A0%EC%9A%94%EC%97%94/" class="title">손목 빠요엔</a></p>
+                            <p class="item-date"><time datetime="2020-04-16T00:25:03.000Z" itemprop="datePublished">2020-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/31/%EC%83%9D%EC%A1%B4%EC%8B%A0%EA%B3%A0/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/2019/10/31/%EC%83%9D%EC%A1%B4%EC%8B%A0%EA%B3%A0/simuruk.jpg)" alt="생존신고" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/chats/">chats</a></p>
+                            <p class="item-title"><a href="/2019/10/31/%EC%83%9D%EC%A1%B4%EC%8B%A0%EA%B3%A0/" class="title">생존신고</a></p>
+                            <p class="item-date"><time datetime="2019-10-31T13:16:09.000Z" itemprop="datePublished">2019-10-31</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">dept.s &amp; cat.s</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIY/">DIY</a><span class="category-list-count">17</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/activities/">activities</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/chats/">chats</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/game/">game</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">7월 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">4월 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">10월 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">2월 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">10월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">9월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">8월 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2월 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/3D-Printer/" rel="tag">3D-Printer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/D4TRG/" rel="tag">D4TRG</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MakerFaire/" rel="tag">MakerFaire</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MuseDashCon/" rel="tag">MuseDashCon</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VR/" rel="tag">VR</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/3D-Printer/" style="font-size: 10px;">3D-Printer</a> <a href="/tags/D4TRG/" style="font-size: 20px;">D4TRG</a> <a href="/tags/MakerFaire/" style="font-size: 10px;">MakerFaire</a> <a href="/tags/MuseDashCon/" style="font-size: 16.67px;">MuseDashCon</a> <a href="/tags/VR/" style="font-size: 13.33px;">VR</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 _0x4d</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a>. CDN by <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'factoryal';
+    
+    
+    var disqus_url = 'https://blog.factoryal.com/2018/07/16/mk030-3-D4TRG-%EB%A1%9C%ED%84%B0%EB%A6%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-2%ED%8E%B8/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

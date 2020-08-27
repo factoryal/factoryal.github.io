@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'D2 coding Ligature';
+  font-style: normal;
+  font-weight: 400;
+  src: local('※'), local('D2Coding ligature'), url('https://github.com/Joungkyun/font-d2coding/raw/master/d2coding-ligature.woff2') format('x-woff2');
+}
